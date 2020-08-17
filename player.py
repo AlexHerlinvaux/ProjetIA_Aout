@@ -18,23 +18,23 @@ class Player :
 
     @property
     def x(self):
-        x,_ = self.current_coord
+        x,_ = self._current_coord
         return x
     @x.setter
     def x(self, new_x):
-        x,y = self.current_coord
+        x,y = self._current_coord
         x = new_x
-        self.current_coord((x,y))
+        self._current_coord((x,y))
     
     @property
     def y(self):
-        _,y = self.current_coord
+        _,y = self._current_coord
         return y
     @y.setter
     def y(self, new_y):
-        x,y = self.current_coord
+        x,y = self._current_coord
         y = new_y
-        self.current_coord((x,y))
+        self._current_coord((x,y))
 
     @property
     def points(self):
