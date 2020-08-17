@@ -115,7 +115,7 @@ class Game :
             player.current_coord = new_coord
             self.draw_cell(new_coord, player)
         if self._nb_cells_left <= 0:
-            self.state = 2
+            self._state = 2
         reward = player._points - self._players[(self._turn+1)%2]._points
         
         self._turn = (self._turn+1)%2
@@ -132,6 +132,6 @@ class Game :
         self.init_board()
         self._nb_cells_left = self._nb_cells
         self._turn = 0
-        self.state = 0
+        self._state = 0
         self._players[0].reset_player()
         self._players[1].reset_player()
