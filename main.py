@@ -14,7 +14,7 @@ def play(game, training = True):
     turn = 0
     players = game._players
     st = game._board
-    while(game.state != 2):
+    while(game._state != 2):
         action = None
         if not isinstance(players[game._turn], IA):
             game.draw_board()
@@ -58,7 +58,7 @@ def training_ai(ai1_Q = {}, ai2_Q = {}, n = 10000):
         play(game)
     return ai1._Q
  
-def play_human(ai_v = {}):   
+def play_human(ai_q = {}):   
     ai1 = IA("1", 0,0, epsilon=0)
     ai1.Q = ai_q
     p1 = Player("2", DEFAULT_SIZE - 1,DEFAULT_SIZE - 1)
